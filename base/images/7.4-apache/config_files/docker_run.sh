@@ -55,7 +55,8 @@ if [ ! -f ./config/settings.inc.php ] && [ ! -f ./install.lock ]; then
 
     if [ $PS_FOLDER_ADMIN != "admin" ] && [ -d /var/www/html/admin ]; then
         echo "\n* Renaming admin folder as $PS_FOLDER_ADMIN ...";
-        mv /var/www/html/admin /var/www/html/$PS_FOLDER_ADMIN/
+        cp -n -R -p /var/www/html/admin/* /var/www/html/$PS_FOLDER_ADMIN/
+        rm -R /var/www/html/admin
     fi
 
     if [ $PS_HANDLE_DYNAMIC_DOMAIN = 1 ]; then
