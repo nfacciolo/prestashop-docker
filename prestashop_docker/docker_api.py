@@ -23,7 +23,7 @@ class DockerApi():
         @type debug: bool
         """
         self.sleep_time = 1
-        self.url = 'https://hub.docker.com/v2/repositories/prestashop/prestashop'
+        self.url = 'https://hub.docker.com/v2/repositories/nicolasfco/prestashop'
         self.cache = cache
         self.is_debug = debug
 

@@ -38,7 +38,7 @@ class TagManager():
 
             log = self.docker_client.api.build(
                 path=str(version_path),
-                tag='prestashop/prestashop:' + version,
+                tag='nicolasfco/prestashop:' + version,
                 rm=True,
                 nocache=(not self.cache),
                 decode=True
@@ -52,8 +52,8 @@ class TagManager():
                         'Create tag {}'.format(alias)
                     )
                     self.docker_client.api.tag(
-                        'prestashop/prestashop:' + version,
-                        'prestashop/prestashop',
+                        'nicolasfco/prestashop:' + version,
+                        'nicolasfco/prestashop',
                         alias
                     )
 
@@ -75,7 +75,7 @@ class TagManager():
                 continue
 
             log = self.docker_client.api.push(
-                repository='prestashop/prestashop',
+                repository='nicolasfco/prestashop',
                 tag=version,
                 decode=True,
                 stream=True
@@ -90,7 +90,7 @@ class TagManager():
                         'Pushing tag {}'.format(alias)
                     )
                     log = self.docker_client.api.push(
-                        repository='prestashop/prestashop',
+                        repository='nicolasfco/prestashop',
                         tag=alias,
                         decode=True,
                         stream=True

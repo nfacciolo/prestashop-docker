@@ -1,4 +1,4 @@
-FROM prestashop/base:$container_version
+FROM nicolasfco/prestashop-base:$container_version
 LABEL maintainer="PrestaShop Core Team <coreteam@prestashop.com>"
 
 ENV PS_VERSION $ps_version

@@ -1,5 +1,5 @@
-FROM prestashop/base:7.3-fpm
-LABEL maintainer="PrestaShop Core Team <coreteam@prestashop.com>"
+FROM nicolasfco/prestashop-base:7.3-fpm
+LABEL maintainer="Reactic <nicolas@reactic.io>"
 
 ENV PS_VERSION 1.7.7.2
 

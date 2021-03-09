@@ -12,7 +12,7 @@
 
 You can use tags for this. For example:
 ```
-$ docker run -ti --name my-docker-name -e PS_DEV_MODE=false -e PS_INSTALL_AUTO=0 -p 8080:80 -d prestashop/prestashop:1.7
+$ docker run -ti --name my-docker-name -e PS_DEV_MODE=false -e PS_INSTALL_AUTO=0 -p 8080:80 -d nicolasfco/prestashop:1.7
 ```
 
 ## What is PrestaShop
@@ -36,7 +36,7 @@ $ docker network create prestashop-net
 # launch mysql 5.7 container
 $ docker run -ti --name some-mysql --network prestashop-net -e MYSQL_ROOT_PASSWORD=admin -p 3307:3306 -d mysql:5.7
 # launch prestashop container
-$ docker run -ti --name some-prestashop --network prestashop-net -e DB_SERVER=some-mysql -p 8080:80 -d prestashop/prestashop:latest
+$ docker run -ti --name some-prestashop --network prestashop-net -e DB_SERVER=some-mysql -p 8080:80 -d nicolasfco/prestashop:latest
 ```
 
 A new shop will be built, ready to be installed.
@@ -97,7 +97,7 @@ Docker for Mac has an issue with bridging networking and consequently cannot rea
 
 You need to set the `PS_DOMAIN` variable to `localhost:8080` for it to work correctly when browsing from the host computer. The command looks something like this:
 ```
-$ docker run -ti --name some-prestashop --network prestashop-net -e DB_SERVER=some-mysql -e PS_DOMAIN=localhost:8080 -p 8080:80 -d prestashop/prestashop
+$ docker run -ti --name some-prestashop --network prestashop-net -e DB_SERVER=some-mysql -e PS_DOMAIN=localhost:8080 -p 8080:80 -d nicolasfco/prestashop
 ```
 
 #### Cannot connect to mysql from host - authentication plugin cannot be loaded
